@@ -3,1058 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>蓝线铂立医疗科技 - 超微创内窥镜技术领导者</title>
-    <meta name="description" content="蓝线铂立医疗科技专注于超微创治疗技术及超细内窥镜技术，产品覆盖泌尿外科、消化科、疼痛科、乳腺外科、血管外科等多个领域">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-blue: #223C78;
-            --accent-gold: #C9A227;
-            --dark: #1a1a2e;
-            --light: #ffffff;
-            --gray: #f5f5f5;
-            --text-gray: #666;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Noto Sans SC', 'Montserrat', sans-serif;
-            color: #333;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        
-        /* Header */
-        header {
-            background: var(--light);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .header-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary-blue);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--primary-blue), #3d5aa8);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-        }
-        
-        nav {
-            display: flex;
-            gap: 40px;
-        }
-        
-        nav a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-            font-size: 15px;
-        }
-        
-        nav a:hover {
-            color: var(--primary-blue);
-        }
-        
-        .mobile-menu {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, #1e3a5f 50%, #0d2137 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 120px 30px 80px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 80%;
-            height: 200%;
-            background: radial-gradient(ellipse, rgba(226,217,32,0.1) 0%, transparent 70%);
-            animation: pulse 8s ease-in-out infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.1); opacity: 0.8; }
-        }
-        
-        .hero-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .hero-content h1 {
-            font-size: 56px;
-            font-weight: 700;
-            color: var(--light);
-            line-height: 1.2;
-            margin-bottom: 30px;
-        }
-        
-        .hero-content h1 span {
-            color: var(--accent-gold);
-        }
-        
-        .hero-content p {
-            font-size: 20px;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 40px;
-            line-height: 1.8;
-        }
-        
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            padding: 16px 40px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: inline-block;
-            font-size: 16px;
-        }
-        
-        .btn-primary {
-            background: var(--accent-gold);
-            color: var(--dark);
-        }
-        
-        .btn-primary:hover {
-            background: #f0e530;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(226,217,32,0.3);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: var(--light);
-            border: 2px solid var(--light);
-        }
-        
-        .btn-secondary:hover {
-            background: var(--light);
-            color: var(--primary-blue);
-        }
-        
-        .hero-visual {
-            position: relative;
-        }
-        
-        .hero-image {
-            width: 100%;
-            max-width: 600px;
-            height: 450px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(10px);
-        }
-        
-        .hero-image-content {
-            text-align: center;
-            color: white;
-        }
-        
-        .hero-image-content svg {
-            width: 200px;
-            height: 200px;
-            margin-bottom: 20px;
-        }
-        
-        /* Stats Bar */
-        .stats-bar {
-            background: var(--accent-gold);
-            padding: 40px 30px;
-        }
-        
-        .stats-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-            text-align: center;
-        }
-        
-        .stat-item h3 {
-            font-size: 48px;
-            font-weight: 700;
-            color: var(--primary-blue);
-        }
-        
-        .stat-item p {
-            font-size: 16px;
-            color: var(--dark);
-            font-weight: 500;
-        }
-        
-        /* About Section */
-        .section {
-            padding: 100px 30px;
-        }
-        
-        .section-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-header h2 {
-            font-size: 42px;
-            font-weight: 700;
-            color: var(--primary-blue);
-            margin-bottom: 20px;
-        }
-        
-        .section-header p {
-            font-size: 18px;
-            color: var(--text-gray);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-        
-        .about-content h3 {
-            font-size: 32px;
-            color: var(--primary-blue);
-            margin-bottom: 20px;
-        }
-        
-        .about-content p {
-            font-size: 17px;
-            color: var(--text-gray);
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-        
-        .about-image {
-            background: var(--gray);
-            border-radius: 20px;
-            height: 450px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        
-        /* Products Section */
-        .products {
-            background: var(--gray);
-        }
-        
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        
-        .product-card {
-            background: var(--light);
-            border-radius: 20px;
-            padding: 40px 30px;
-            text-align: center;
-            transition: all 0.3s;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
-        
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-        
-        .product-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--primary-blue), #3d5aa8);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
-            color: white;
-            font-size: 36px;
-        }
-        
-        .product-card h3 {
-            font-size: 22px;
-            color: var(--primary-blue);
-            margin-bottom: 15px;
-        }
-        
-        .product-card p {
-            font-size: 15px;
-            color: var(--text-gray);
-            line-height: 1.7;
-        }
-        
-        /* Features Section */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-        }
-        
-        .feature-item {
-            display: flex;
-            gap: 20px;
-            padding: 30px;
-            background: var(--light);
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
-        
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--accent-gold);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            font-size: 28px;
-        }
-        
-        .feature-content h4 {
-            font-size: 20px;
-            color: var(--primary-blue);
-            margin-bottom: 10px;
-        }
-        
-        .feature-content p {
-            font-size: 15px;
-            color: var(--text-gray);
-            line-height: 1.7;
-        }
-        
-        /* CSR Section */
-        .csr {
-            background: linear-gradient(135deg, var(--primary-blue), #1e3a5f);
-            color: var(--light);
-        }
-        
-        .csr .section-header h2 {
-            color: var(--light);
-        }
-        
-        .csr .section-header p {
-            color: rgba(255,255,255,0.8);
-        }
-        
-        .csr-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-        
-        .csr-image {
-            background: rgba(255,255,255,0.1);
-            border-radius: 20px;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-        
-        .csr-text h3 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            color: var(--accent-gold);
-        }
-        
-        .csr-text p {
-            font-size: 17px;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            opacity: 0.9;
-        }
-        
-        .csr-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin-top: 30px;
-        }
-        
-        .csr-stat h4 {
-            font-size: 36px;
-            color: var(--accent-gold);
-            font-weight: 700;
-        }
-        
-        .csr-stat p {
-            font-size: 15px;
-            opacity: 0.8;
-        }
-        
-        /* Contact Section */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-        }
-        
-        .contact-info h3 {
-            font-size: 28px;
-            color: var(--primary-blue);
-            margin-bottom: 30px;
-        }
-        
-        .contact-item {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 25px;
-            align-items: flex-start;
-        }
-        
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--gray);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            color: var(--primary-blue);
-            font-size: 20px;
-        }
-        
-        .contact-item h4 {
-            font-size: 18px;
-            color: var(--primary-blue);
-            margin-bottom: 5px;
-        }
-        
-        .contact-item p {
-            font-size: 15px;
-            color: var(--text-gray);
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: var(--light);
-            padding: 60px 30px 30px;
-        }
-        
-        .footer-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-brand h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: var(--accent-gold);
-        }
-        
-        .footer-brand p {
-            font-size: 15px;
-            opacity: 0.7;
-            line-height: 1.7;
-        }
-        
-        .footer-links h4 {
-            font-size: 18px;
-            margin-bottom: 20px;
-            color: var(--light);
-        }
-        
-        .footer-links ul {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-        
-        .footer-links a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            font-size: 15px;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: var(--accent-gold);
-        }
-        
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 30px;
-            text-align: center;
-            opacity: 0.6;
-            font-size: 14px;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            .hero-content h1 {
-                font-size: 44px;
-            }
-            
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
+    <title>杭州秘境 | 小眾景點指南</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        qing: { DEFAULT: '#5A7C76', light: '#8CAAA6', dark: '#456059' }
+                    }
+                }
             }
         }
-        
-        @media (max-width: 992px) {
-            nav {
-                display: none;
-            }
-            
-            .mobile-menu {
-                display: block;
-            }
-            
-            .hero-container {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .hero-content h1 {
-                font-size: 38px;
-            }
-            
-            .hero-buttons {
-                justify-content: center;
-            }
-            
-            .hero-visual {
-                display: none;
-            }
-            
-            .stats-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .about-grid,
-            .csr-content,
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .about-image,
-            .csr-image {
-                height: 300px;
-            }
-            
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .header-container {
-                padding: 15px 20px;
-            }
-            
-            .hero {
-                padding: 100px 20px 60px;
-            }
-            
-            .hero-content h1 {
-                font-size: 32px;
-            }
-            
-            .hero-content p {
-                font-size: 17px;
-            }
-            
-            .btn {
-                padding: 14px 30px;
-                font-size: 15px;
-            }
-            
-            .section {
-                padding: 60px 20px;
-            }
-            
-            .section-header h2 {
-                font-size: 28px;
-            }
-            
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .stats-container {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .stat-item h3 {
-                font-size: 36px;
-            }
-            
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .csr-stats {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-content h1 {
-                font-size: 26px;
-            }
-            
-            .section-header h2 {
-                font-size: 24px;
-            }
-            
-            .about-content h3,
-            .csr-text h3 {
-                font-size: 22px;
-            }
-            
-            .product-card {
-                padding: 30px 20px;
-            }
-        }
-    </style>
+    </script>
 </head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <div class="logo-icon">蓝</div>
-                <span>蓝线铂立医疗科技</span>
-            </div>
-            <nav>
-                <a href="#home">首页</a>
-                <a href="#about">走进蓝线</a>
-                <a href="#products">核心产品</a>
-                <a href="#csr">社会责任</a>
-                <a href="#contact">联系我们</a>
-            </nav>
-            <div class="mobile-menu">☰</div>
-        </div>
-    </header>
+<body class="bg-gray-50 text-gray-800 font-sans">
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1>超微创内窥镜技术<br><span>引领医疗新时代</span></h1>
-                <p>蓝线铂立医疗科技专注于超微创治疗技术及超细内窥镜技术，产品覆盖泌尿外科、消化科、疼痛科、乳腺外科、血管外科等多个领域。安全、精准、微创，以患者为中心。</p>
-                <div class="hero-buttons">
-                    <a href="#products" class="btn btn-primary">探索产品</a>
-                    <a href="#about" class="btn btn-secondary">了解更多</a>
+    <!-- 導航 -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-qing">杭州 · 秘境</h1>
+            <span class="text-sm text-gray-500">5個隱藏在古城與綠蔭中的絕美地標</span>
+        </div>
+    </nav>
+
+    <!-- 景點卡片 -->
+    <main class="max-w-6xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- 1. 馒头山社区 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition">
+            <div class="h-48 bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center text-white text-4xl">🏘️</div>
+            <div class="p-5">
+                <div class="flex justify-between items-start mb-2">
+                    <h2 class="text-xl font-bold">馒头山社区</h2>
+                    <span class="bg-qing/10 text-qing text-xs px-2 py-1 rounded">人文攝影</span>
                 </div>
-            </div>
-            <div class="hero-visual">
-                <div class="hero-image">
-                    <div class="hero-image-content">
-                        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="100" cy="100" r="80" stroke="white" stroke-width="2" opacity="0.3"/>
-                            <circle cx="100" cy="100" r="60" stroke="white" stroke-width="2" opacity="0.5"/>
-                            <circle cx="100" cy="100" r="40" stroke="#C9A227" stroke-width="3"/>
-                            <line x1="100" y1="20" x2="100" y2="180" stroke="white" stroke-width="1" opacity="0.3"/>
-                            <line x1="20" y1="100" x2="180" y2="100" stroke="white" stroke-width="1" opacity="0.3"/>
-                            <circle cx="100" cy="100" r="8" fill="#C9A227"/>
-                        </svg>
-                        <p style="font-size: 18px; opacity: 0.9;">精准医疗 · 微创未来</p>
-                    </div>
+                <p class="text-gray-600 text-sm mb-3">凤凰山脚下的老杭州市井生活场景，圣果寺遗址、文创店铺聚集地，浓浓烟火气。</p>
+                <div class="text-xs text-gray-500 space-y-1">
+                    <p>📍 上城区凤凰山脚路</p>
+                    <p>🕐 全天开放 · 免费</p>
+                    <p>⏱️ 建议游玩 2-3 小时</p>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Stats Bar -->
-    <section class="stats-bar">
-        <div class="stats-container">
-            <div class="stat-item">
-                <h3>15+</h3>
-                <p>年行业深耕</p>
-            </div>
-            <div class="stat-item">
-                <h3>3</h3>
-                <p>大核心产品线</p>
-            </div>
-            <div class="stat-item">
-                <h3>153</h3>
-                <p>名结石宝宝获救</p>
-            </div>
-            <div class="stat-item">
-                <h3>1000+</h3>
-                <p>家合作医疗机构</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="section" id="about">
-        <div class="section-container">
-            <div class="section-header">
-                <h2>走进蓝线</h2>
-                <p>专注于超微创的治疗技术及超细内窥镜技术，致力于为全球患者提供更安全、更精准的医疗服务</p>
-            </div>
-            <div class="about-grid">
-                <div class="about-content">
-                    <h3>以患者为中心，创伤最小化</h3>
-                    <p>蓝线铂立医疗科技自创立以来，始终专注于超微创治疗技术及超细内窥镜技术的研发与创新。我们的产品覆盖消化科、疼痛科、乳腺外科、血管外科等多个领域，并在泌尿外科领域形成了独特的技术优势。</p>
-                    <p>以中华医学会泌尿外科学分会主任委员黄健教授为首倡专家，中山大学孙逸仙纪念医院为学术中心，我们携手创办了"泌尿系结石整体微创治疗策略高峰论坛"，倡导"安全、精准、微创"的治疗理念。</p>
-                    <p>路漫漫其修远兮，吾将上下而求索。蓝线医疗将继续秉承创新精神，为医疗事业贡献更多力量。</p>
-                    <a href="#" class="btn btn-primary" style="margin-top: 20px;">了解发展历程</a>
+        <!-- 2. 小河直街 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition">
+            <div class="h-48 bg-gradient-to-br from-blue-400 to-cyan-600 flex items-center justify-center text-white text-4xl">🏮</div>
+            <div class="p-5">
+                <div class="flex justify-between items-start mb-2">
+                    <h2 class="text-xl font-bold">小河直街</h2>
+                    <span class="bg-qing/10 text-qing text-xs px-2 py-1 rounded">古建築</span>
                 </div>
-                <div class="about-image">
-                    <svg width="300" height="300" viewBox="0 0 300 300" fill="none">
-                        <rect x="50" y="50" width="200" height="200" rx="20" fill="#223C78" opacity="0.1"/>
-                        <rect x="75" y="75" width="150" height="150" rx="15" fill="#223C78" opacity="0.2"/>
-                        <circle cx="150" cy="150" r="50" fill="#223C78" opacity="0.3"/>
-                        <path d="M130 150 L150 130 L170 150 L150 170 Z" fill="#C9A227"/>
-                    </svg>
+                <p class="text-gray-600 text-sm mb-3">保留清末民初建筑风格，小河蜿蜒，白墙黑瓦，传统手工作坊与特色小吃。</p>
+                <div class="text-xs text-gray-500 space-y-1">
+                    <p>📍 拱墅区小河直街</p>
+                    <p>🕐 全天开放 · 免费</p>
+                    <p>⏱️ 建议游玩 2-3 小时</p>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Products Section -->
-    <section class="section products" id="products">
-        <div class="section-container">
-            <div class="section-header">
-                <h2>核心产品</h2>
-                <p>三大产品线贯穿整个PCNL术式，为临床医师提供"安全、精准、微创"的整体解决方案</p>
-            </div>
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-icon">🔬</div>
-                    <h3>超微创可视经皮肾镜</h3>
-                    <p>超微创、全程直视手术路径的可视穿刺新型经皮肾镜。独特的直视监测功能，极大提高原术式的安全与精准，术后创伤仅一个针眼。</p>
+        <!-- 3. 象山美院 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition">
+            <div class="h-48 bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center text-white text-4xl">🎨</div>
+            <div class="p-5">
+                <div class="flex justify-between items-start mb-2">
+                    <h2 class="text-xl font-bold">中国美术学院象山校区</h2>
+                    <span class="bg-qing/10 text-qing text-xs px-2 py-1 rounded">建築藝術</span>
                 </div>
-                <div class="product-card">
-                    <div class="product-icon">⚡</div>
-                    <h3>极小镜鞘比经皮肾镜</h3>
-                    <p>纤细的镜身与皮肾通道之间保有充分的间隙，拥有畅通的灌注回流，患者感染风险低。专攻大负荷结石，四两亦能拨千斤。</p>
-                </div>
-                <div class="product-card">
-                    <div class="product-icon">🚀</div>
-                    <h3>极高效经皮肾镜</h3>
-                    <p>镜身比同类肾镜更微创，可容纳多种高功率器械高效碎石，缩短手术时间。集微创与高效两大优势，迅速攻坚大负荷疑难结石。</p>
-                </div>
-                <div class="product-card">
-                    <div class="product-icon">🔄</div>
-                    <h3>可拆卸式输尿管软镜</h3>
-                    <p>独特的结构大幅降低同类器械"高损坏率、高维修费"弊端，极大降低了临床交叉感染，解决了阻碍该器械技术发展的瓶颈。</p>
-                </div>
-                <div class="product-card">
-                    <div class="product-icon">👁️</div>
-                    <h3>蓝线Fr4.8超微创可视针式内窥镜</h3>
-                    <p>超细内窥镜技术，适用于消化科、疼痛科、乳腺外科、血管外科等多个领域，实现真正的超微创诊疗。</p>
-                </div>
-                <div class="product-card">
-                    <div class="product-icon">🔧</div>
-                    <h3>可拆卸组合式乳管镜</h3>
-                    <p>模块化设计，便于清洁消毒和维护，降低交叉感染风险，为乳腺疾病诊疗提供安全可靠的解决方案。</p>
+                <p class="text-gray-600 text-sm mb-3">普利兹克奖得主王澍设计，独特建筑风格融合传统与现代，水岸山居等标志性建筑。</p>
+                <div class="text-xs text-gray-500 space-y-1">
+                    <p>📍 西湖区转塘镇</p>
+                    <p>🕐 需预约 · 免费</p>
+                    <p>⏱️ 建议游玩 3-4 小时</p>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Features Section -->
-    <section class="section">
-        <div class="section-container">
-            <div class="section-header">
-                <h2>技术优势</h2>
-                <p>创新引领，品质为本</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">🛡️</div>
-                    <div class="feature-content">
-                        <h4>安全可靠</h4>
-                        <p>独特的直视监测功能，极大提高手术安全与精准度，降低创伤与并发症风险。</p>
-                    </div>
+        <!-- 4. 丝绸博物馆 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition">
+            <div class="h-48 bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center text-white text-4xl">🏛️</div>
+            <div class="p-5">
+                <div class="flex justify-between items-start mb-2">
+                    <h2 class="text-xl font-bold">中国丝绸博物馆</h2>
+                    <span class="bg-qing/10 text-qing text-xs px-2 py-1 rounded">博物館</span>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🎯</div>
-                    <div class="feature-content">
-                        <h4>精准定位</h4>
-                        <p>优化传统术式操作，利于精确定位，解决同类器械与该术式发展的盲点与难点。</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">💉</div>
-                    <div class="feature-content">
-                        <h4>超微创伤</h4>
-                        <p>术后创伤仅一个针眼，患者痛苦小恢复快，住院时间短，脏器功能损伤低。</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🌟</div>
-                    <div class="feature-content">
-                        <h4>行业认可</h4>
-                        <p>建立"泌尿系结石整体微创治疗策略"大中华区培训中心，技术与爱心传播给有需要的病患。</p>
-                    </div>
+                <p class="text-gray-600 text-sm mb-3">世界最大丝绸博物馆，丝路馆为网红打卡点，时装馆、织造馆、锦绣廊。</p>
+                <div class="text-xs text-gray-500 space-y-1">
+                    <p>📍 上城区玉皇山路73-1号</p>
+                    <p>🕐 周二至日 9:00-17:00 · 免费</p>
+                    <p>⏱️ 建议游玩 2-3 小时</p>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- CSR Section -->
-    <section class="section csr" id="csr">
-        <div class="section-container">
-            <div class="section-header">
-                <h2>社会责任</h2>
-                <p>践行企业担当，传递医疗爱心</p>
-            </div>
-            <div class="csr-content">
-                <div class="csr-image">
-                    <svg width="250" height="250" viewBox="0 0 250 250" fill="none">
-                        <circle cx="125" cy="125" r="100" stroke="white" stroke-width="2" opacity="0.3"/>
-                        <path d="M125 50 C75 50, 50 100, 50 125 C50 175, 100 200, 125 200 C150 200, 200 175, 200 125 C200 100, 175 50, 125 50" fill="#C9A227" opacity="0.2"/>
-                        <path d="M125 80 L125 170 M80 125 L170 125" stroke="#C9A227" stroke-width="4" stroke-linecap="round"/>
-                    </svg>
+        <!-- 5. 白塔公园 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition">
+            <div class="h-48 bg-gradient-to-br from-green-400 to-teal-600 flex items-center justify-center text-white text-4xl">🚂</div>
+            <div class="p-5">
+                <div class="flex justify-between items-start mb-2">
+                    <h2 class="text-xl font-bold">白塔公园</h2>
+                    <span class="bg-qing/10 text-qing text-xs px-2 py-1 rounded">工業遺產</span>
                 </div>
-                <div class="csr-text">
-                    <h3>救治新疆结石宝宝公益项目</h3>
-                    <p>响应党提出的实现全民健康，消灭因病致贫返贫、精准扶贫的号召，蓝线铂立医疗科技携手中山大学孙逸仙纪念医院及相关部门，赴新疆喀什等地发起"救治新疆结石宝宝公益项目"。</p>
-                    <p>为贫困、深受病痛折磨的结石患儿实施免费手术，并开展低龄儿童结石筛查义诊工作，输送先进医疗技术、设备，开展业务教学与技术培训，培养当地业务能力及医疗水平，带出一批技术骨干，造福新疆人民。</p>
-                    <div class="csr-stats">
-                        <div class="csr-stat">
-                            <h4>153</h4>
-                            <p>名结石宝宝获救</p>
-                        </div>
-                        <div class="csr-stat">
-                            <h4>央视</h4>
-                            <p>新闻报道关注</p>
-                        </div>
-                    </div>
+                <p class="text-gray-600 text-sm mb-3">杭州最大的铁路遗存博物馆，复古火车、工业遗产，文艺拍照圣地。</p>
+                <div class="text-xs text-gray-500 space-y-1">
+                    <p>📍 西湖区老复兴街</p>
+                    <p>🕐 全天开放 · 免费</p>
+                    <p>⏱️ 建议游玩 1-2 小时</p>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section class="section" id="contact">
-        <div class="section-container">
-            <div class="section-header">
-                <h2>联系我们</h2>
-                <p>期待与您携手，共创医疗美好未来</p>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>蓝线铂立医疗科技有限公司</h3>
-                    <div class="contact-item">
-                        <div class="contact-icon">📍</div>
-                        <div>
-                            <h4>公司地址</h4>
-                            <p>中国广东省深圳市</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div>
-                            <h4>电子邮箱</h4>
-                            <p>contact@coastline.com.cn</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📞</div>
-                        <div>
-                            <h4>联系电话</h4>
-                            <p>400-XXX-XXXX</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">🏥</div>
-                        <div>
-                            <h4>培训中心</h4>
-                            <p>中山大学孙逸仙纪念医院<br>泌尿系结石整体微创治疗策略大中华区培训中心</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image" style="background: linear-gradient(135deg, #f0f4f8, #e6eef7);">
-                    <svg width="300" height="300" viewBox="0 0 300 300" fill="none">
-                        <rect x="75" y="100" width="150" height="120" rx="10" fill="#223C78" opacity="0.1"/>
-                        <circle cx="150" cy="160" r="30" fill="#223C78" opacity="0.2"/>
-                        <rect x="130" y="80" width="40" height="30" fill="#C9A227" opacity="0.5"/>
-                        <line x1="150" y1="80" x2="150" y2="60" stroke="#223C78" stroke-width="3"/>
-                        <circle cx="150" cy="55" r="5" fill="#C9A227"/>
-                    </svg>
-                </div>
-            </div>
-        </div>
-    </section>
+    </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <h3>蓝线铂立医疗科技</h3>
-                    <p>专注于超微创治疗技术及超细内窥镜技术，致力于为医疗行业提供安全、精准、微创的整体解决方案。</p>
-                </div>
-                <div class="footer-links">
-                    <h4>快速链接</h4>
-                    <ul>
-                        <li><a href="#home">首页</a></li>
-                        <li><a href="#about">走进蓝线</a></li>
-                        <li><a href="#products">核心产品</a></li>
-                        <li><a href="#csr">社会责任</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>产品中心</h4>
-                    <ul>
-                        <li><a href="#">经皮肾镜系列</a></li>
-                        <li><a href="#">输尿管软镜</a></li>
-                        <li><a href="#">超细内窥镜</a></li>
-                        <li><a href="#">乳管镜</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>支持与服务</h4>
-                    <ul>
-                        <li><a href="#">技术培训</a></li>
-                        <li><a href="#">售后服务</a></li>
-                        <li><a href="#">学术交流</a></li>
-                        <li><a href="#contact">联系我们</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2024 蓝线铂立医疗科技有限公司 版权所有 | 粤ICP备XXXXXXXX号</p>
-            </div>
+    <!-- 頁腳 -->
+    <footer class="bg-gray-800 text-white py-6 mt-8">
+        <div class="max-w-6xl mx-auto px-4 text-center text-sm">
+            <p>探索杭州的靜謐角落 · 避開人潮享清幽</p>
         </div>
     </footer>
 
-    <script>
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Mobile menu toggle (basic)
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            alert('移动端菜单功能待完善');
-        });
-
-        // Add scroll effect to header
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.boxShadow = '0 2px 30px rgba(0,0,0,0.15)';
-            } else {
-                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
-            }
-        });
-
-        // Animate stats on scroll
-        const observerOptions = {
-            threshold: 0.5,
-            rootMargin: '0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements
-        document.querySelectorAll('.stat-item, .product-card, .feature-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
-    </script>
 </body>
 </html>
