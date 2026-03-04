@@ -3,124 +3,566 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>杭州秘境 | 小眾景點指南</title>
+    <title>杭州秘境指南 | 避開人潮的5個私藏地點</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        qing: { DEFAULT: '#5A7C76', light: '#8CAAA6', dark: '#456059' }
+                        'qing': '#5A7C76',
+                        'qing-light': '#8CAAA6',
+                        'paper': '#F9F7F2',
+                        'ink': '#2C3E50',
+                        'gold': '#C9A962'
+                    },
+                    fontFamily: {
+                        'serif': ['"Noto Serif SC"', 'serif'],
+                        'sans': ['"Noto Sans SC"', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
+    <style>
+        body { font-family: 'Noto Sans SC', sans-serif; }
+        .font-serif { font-family: 'Noto Serif SC', serif; }
+        .text-shadow { text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); }
+        .tag-pill { background: rgba(90,124,118,0.1); border: 1px solid rgba(90,124,118,0.3); }
+        .tip-box { background: linear-gradient(135deg, #FFF8E7 0%, #FFF3D6 100%); border-left: 4px solid #C9A962; }
+        .warning-box { background: linear-gradient(135deg, #FEF2F2 0%, #FEE2E2 100%); border-left: 4px solid #EF4444; }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-paper text-ink">
 
     <!-- 導航 -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-qing">杭州 · 秘境</h1>
-            <span class="text-sm text-gray-500">5個隱藏在古城與綠蔭中的絕美地標</span>
+    <nav class="fixed w-full bg-white/95 backdrop-blur-md shadow-sm z-50 top-0">
+        <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-serif font-bold text-qing">杭州秘境指南</h1>
+            <span class="text-sm text-gray-500 hidden sm:block">避開人潮的5個私藏地點</span>
         </div>
     </nav>
 
-    <!-- 景點卡片 -->
-    <main class="max-w-6xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Hero -->
+    <header class="pt-24 pb-12 px-4 bg-gradient-to-br from-qing to-qing-light text-white">
+        <div class="max-w-3xl mx-auto text-center">
+            <p class="text-sm uppercase tracking-widest opacity-80 mb-4">Hidden Hangzhou</p>
+            <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4 text-shadow">探索杭州的另一面</h2>
+            <p class="text-lg opacity-90 leading-relaxed">
+                不走尋常路，發現這座城市最真實的模樣。<br>
+                從市井煙火到建築藝術，這份指南帶你走進本地人的日常。
+            </p>
+        </div>
+    </header>
 
-        <!-- 1. 馒头山社区 -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition">
-            <div class="h-48 bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center text-white text-4xl">🏘️</div>
-            <div class="p-5">
-                <div class="flex justify-between items-start mb-2">
-                    <h2 class="text-xl font-bold">馒头山社区</h2>
-                    <span class="bg-qing/10 text-qing text-xs px-2 py-1 rounded">人文攝影</span>
+    <!-- 為什麼選這些地方 -->
+    <section class="max-w-4xl mx-auto px-4 py-12">
+        <h3 class="text-2xl font-serif font-bold text-qing mb-6">為什麼選這些地方？</h3>
+        <div class="prose prose-gray max-w-none">
+            <p class="text-gray-700 leading-relaxed mb-4">
+                杭州的西湖名氣太大，大到遊客們常常忘記這座城市還有更多值得探索的角落。
+                我們精選的這5個地點，既有<strong>千年歷史沉澱</strong>（如五代時期的白塔），
+                也有<strong>當代建築傑作</strong>（如王澍設計的美院），更有<strong>鮮活的城市肌理</strong>（如饅頭山社區）。
+            </p>
+            <p class="text-gray-700 leading-relaxed">
+                這份指南參考了孤獨星球的深度探訪方式，每個地點都包含：
+                <span class="inline-flex gap-2 flex-wrap mt-2">
+                    <span class="tag-pill text-qing px-3 py-1 rounded-full text-sm">🎯 為什麼去</span>
+                    <span class="tag-pill text-qing px-3 py-1 rounded-full text-sm">🍜 吃什麼</span>
+                    <span class="tag-pill text-qing px-3 py-1 rounded-full text-sm">⚠️ 避坑提醒</span>
+                    <span class="tag-pill text-qing px-3 py-1 rounded-full text-sm">💬 網友真評</span>
+                </span>
+            </p>
+        </div>
+    </section>
+
+    <!-- 景點列表 -->
+    <main class="max-w-5xl mx-auto px-4 pb-16 space-y-12">
+
+        <!-- 景點1: 饅頭山社區 -->
+        <article class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+            <div class="h-64 bg-gradient-to-br from-amber-700 to-orange-600 flex items-center justify-center text-white text-6xl">
+                🏘️
+            </div>
+            <div class="p-6 md:p-8">
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-qing text-white px-3 py-1 rounded-full text-sm">市井文化</span>
+                    <span class="tag-pill text-qing px-3 py-1 rounded-full text-sm">歷史街區</span>
+                    <span class="tag-pill text-qing px-3 py-1 rounded-full text-sm">免費</span>
                 </div>
-                <p class="text-gray-600 text-sm mb-3">凤凰山脚下的老杭州市井生活场景，圣果寺遗址、文创店铺聚集地，浓浓烟火气。</p>
-                <div class="text-xs text-gray-500 space-y-1">
-                    <p>📍 上城区凤凰山脚路</p>
-                    <p>🕐 全天开放 · 免费</p>
-                    <p>⏱️ 建议游玩 2-3 小时</p>
+                
+                <h3 class="text-2xl font-serif font-bold text-ink mb-3">饅頭山社區 · 最杭州的煙火氣</h3>
+                
+                <!-- 為什麼去 -->
+                <div class="mb-6">
+                    <h4 class="font-bold text-qing mb-2 flex items-center">
+                        <span class="mr-2">🎯</span> 為什麼去
+                    </h4>
+                    <p class="text-gray-700 leading-relaxed">
+                        這裡曾是<strong>南宋皇城遺址</strong>，五代吳越國皇宮所在地。因太平天國時期李秀成在此蒸饅頭誘降守軍而得名。
+                        如今它是杭州最後的<strong>「城中村」</strong>，20世紀五六十年代的老房子沿山而建，沒有拆遷，沒有翻新，
+                        保留著最原汁原味的老杭州市井生活——竹椅、痰盂、鳳凰自行車，還有街口的古井。
+                    </p>
+                </div>
+
+                <!-- 必體驗 -->
+                <div class="mb-6">
+                    <h4 class="font-bold text-qing mb-2 flex items-center">
+                        <span class="mr-2">✨</span> 必體驗
+                    </h4>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start"><span class="text-gold mr-2">▸</span>在<strong>聖果寺遺址</strong>尋找千年石刻</li>
+                        <li class="flex items-start"><span class="text-gold mr-2">▸</span>探訪<strong>老虎洞官窯</strong>遺址（南宋皇家瓷窯）</li>
+                        <li class="flex items-start"><span class="text-gold mr-2">▸</span>午後坐在路邊，看老人們打牌聊天</li>
+                        <li class="flex items-start"><span class="text-gold mr-2">▸</span>尋找隱藏在老宅中的文創小店</li>
+                    </ul>
+                </div>
+
+                <!-- 吃什麼 -->
+                <div class="mb-6">
+                    <h4 class="font-bold text-qing mb-2 flex items-center">
+                        <span class="mr-2">🍜</span> 周邊美食
+                    </h4>
+                    <p class="text-gray-700">
+                        社區內小吃不多，建議在<strong>鳳凰山腳路</strong>附近解決。推薦：<br>
+                        <span class="text-qing font-medium">「老懂茶食」</span>——本地人都去的杭州菜館，杭三鮮、東坡肉地道<br>
+                        <span class="text-qing font-medium">「大井巷」</span>——步行可達，有更多咖啡館和輕食選擇
+                    </p>
+                </div>
+
+                <!-- 實用信息 -->
+                <div class="grid md:grid-cols-3 gap-4 mb-6 text-sm">
+                    <div class="bg-gray-50 p-3 rounded-lg">
+                        <span class="text-gray-500">📍 地址</span>
+                        <p class="font-medium">上城區鳳凰山腳路</p>
+                    </div>
+                    <div class="bg-gray-50 p-3 rounded-lg">
+                        <span class="text-gray-500">🚇 交通</span>
+                        <p class="font-medium">地鐵5號線候潮門站B口，步行15分鐘</p>
+                    </div>
+                    <div class="bg-gray-50 p-3 rounded-lg">
+                        <span class="text-gray-500">⏰ 時間</span>
+                        <p class="font-medium">全天開放，建議2-3小時</p>
+                    </div>
+                </div>
+
+                <!-- 避坑提醒 -->
+                <div class="warning-box p-4 rounded-lg mb-4">
+                    <h5 class="font-bold text-red-700 mb-2">⚠️ 避坑提醒</h5>
+                    <ul class="text-red-800 text-sm space-y-1">
+                        <li>• 路窄坡陡，建議穿舒適的鞋子，不適合推嬰兒車</li>
+                        <li>• 停車位極少且路窄，強烈建議公共交通前往</li>
+                        <li>• 部分區域在拆遷改造，導航可能不準，建議問路</li>
+                    </ul>
+                </div>
+
+                <!-- 網友評價 -->
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h5 class="font-bold text-gray-700 mb-2">💬 網友真實評價</h5>
+                    <blockquote class="text-gray-600 italic border-l-4 border-qing pl-4">
+                        「比河坊街真實一百倍！這裡沒有遊客，只有生活。坐在路邊看老人下棋，
+                        聽不懂的杭州話在耳邊飄過，這才是我想要的旅行。」
+                        <span class="block text-sm text-gray-500 mt-2">—— 攜程遊客 2024</span>
+                    </blockquote>
                 </div>
             </div>
-        </div>
+        </article>
 
-        <!-- 2. 小河直街 -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition">
-            <div class="h-48 bg-gradient-to-br from-blue-400 to-cyan-600 flex items-center justify-center text-white text-4xl">🏮</div>
-            <div class="p-5">
-                <div class="flex justify-between items-start mb-2">
-                    <h2 class="text-xl font-bold">小河直街</h2>
-                    <span class="bg-qing/10 text-qing text-xs px-2 py-1 rounded">古建築</span>
+        <!-- 景點2: 小河直街 -->
+        <article class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+            <div class="h-64 bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center text-white text-6xl">
+                🏮
+            </div>
+            <div class="p-6 md:p-8">
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-qing text-white px-3 py-1 rounded-full text-sm">運河文化</span>
+                    <span class="tag-pill text-qing px-3 py-1 rounded-full text-sm">古建築</span>
+                    <span class="tag-pill text-qing px-3 py-1 rounded-full text-sm">夜景</span>
                 </div>
-                <p class="text-gray-600 text-sm mb-3">保留清末民初建筑风格，小河蜿蜒，白墙黑瓦，传统手工作坊与特色小吃。</p>
-                <div class="text-xs text-gray-500 space-y-1">
-                    <p>📍 拱墅区小河直街</p>
-                    <p>🕐 全天开放 · 免费</p>
-                    <p>⏱️ 建议游玩 2-3 小时</p>
+                
+                <h3 class="text-2xl font-serif font-bold text-ink mb-3">小河直街 · 運河邊的江南水鄉</h3>
+                
+                <div class="mb-6">
+                    <h4 class="font-bold text-qing mb-2 flex items-center">
+                        <span class="mr-2">🎯</span> 為什麼去
+                    </h4>
+                    <p class="text-gray-700 leading-relaxed">
+                        相比商業化的河坊街，小河直街保留了<strong>清末民初的建築風格</strong>，是京杭大運河杭州段僅存的歷史街區。
+                        三河交匯（運河、小河、余杭塘河），白牆黑瓦沿水而建，沒有喧囂的紀念品店，
+                        取而代之的是<strong>手作工坊、獨立書店、茶館和文藝小店</strong>。夜晚燈籠亮起時，彷彿穿越回百年前的江南。
+                    </p>
+                </div>
+
+                <div class="mb-6">
+                    <h4 class="font-bold text-qing mb-2 flex items-center">
+                        <span class="mr-2">✨</span> 必體驗
+                    </h4>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start"><span class="text-gold mr-2">▸</span>傍晚時分沿河漫步，看夕陽灑在白牆上</li>
+                        <li class="flex items-start"><span class="text-gold mr-2">▸</span>找一家臨河茶館，聽著鋼琴聲發呆</li>
+                        <li class="flex items-start"><span class="text-gold mr-2">▸</span>參觀傳統手工作坊（油纸傘、竹編等）</li>
+                        <li class="flex items-start"><span class="text-gold mr-2">▸</span>打卡<strong>「運河七區」</strong>文創園區</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <h4 class="font-bold text-qing mb-2 flex items-center">
+                        <span class="mr-2">🍜</span> 周邊美食
+                    </h4>
+                    <p class="text-gray-700">
+                        <span class="text-qing font-medium">「小河面馆」</span>——老杭州人的私藏，片兒川正宗<br>
+                        <span class="text-qing font-medium">「MEOOOU」</span>——網紅冰淇淋店，顏值與味道兼具<br>
+                        <span class="text-qing font-medium">「河下咖啡」</span>——臨河景觀位，適合下午茶
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-4 mb-6 text-sm">
+                    <div class="bg-gray-50 p-3 rounded-lg">
+                        <span class="text-gray-500">📍 地址</span>
+                        <p class="font-medium">拱墅區小河直街（近和睦路）</p>
+                    </div>
+                    <div class="bg-gray-50 p-3 rounded-lg">
+                        <span class="text-gray-500">🚇 交通</span>
+                        <p class="font-medium">地鐵5號線大運河站D口，步行10分鐘</p>
+                    </div>
+                    <div class="bg-gray-50 p-3 rounded-lg">
+                        <span class="text-gray-500">⏰ 時間</span>
+                        <p class="font-medium">全天開放，建議傍晚到訪</p>
+                    </div>
+                </div>
+
+                <div class="tip-box p-4 rounded-lg mb-4">
+                    <h5 class="font-bold text-amber-800 mb-2">💡 本地建議</h5>
+                    <p class="text-amber-900 text-sm">
+                        一定要待到晚上！夜幕降臨後遊客散去，燈籠亮起，
+                        運河邊只剩下寧靜和偶爾傳來的鋼琴聲，這才是小河直街最美的時刻。
+                    </p>
                 </div>
             </div>
-        </div>
+        </article>
 
-        <!-- 3. 象山美院 -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition">
-            <div class="h-48 bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center text-white text-4xl">🎨</div>
-            <div class="p-5">
-                <div class="flex justify-between items-start mb-2">
-                    <h2 class="text-xl font-bold">中国美术学院象山校区</h2>
-                    <span class="bg-qing/10 text-qing text-xs px-2 py-1 rounded">建築藝術</span>
+        <!-- 景點3: 象山美皖 -->
+        <article class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+            <div class="h-64 bg-gradient-to-br from-red-700 to-orange-600 flex items-center justify-center text-white text-6xl">
+                🎨
+            </div>
+            <div class="p-6 md:p-8">
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-qing text-white px-3 py-1 rounded-full text-sm">建築藝術</span>
+                    <span class="tag-pill text-qing px-3 py-1 rounded-full text-sm">世界級</span>
+                    <span class="tag-pill text-qing px-3 py-1 rounded-full text-sm">免費</span>
                 </div>
-                <p class="text-gray-600 text-sm mb-3">普利兹克奖得主王澍设计，独特建筑风格融合传统与现代，水岸山居等标志性建筑。</p>
-                <div class="text-xs text-gray-500 space-y-1">
-                    <p>📍 西湖区转塘镇</p>
-                    <p>🕐 需预约 · 免费</p>
-                    <p>⏱️ 建议游玩 3-4 小时</p>
+                
+                <h3 class="text-2xl font-serif font-bold text-ink mb-3">中國美皖象山校區 · 建築迷的朝聖地</h3>
+                
+                <div class="mb-6">
+                    <h4 class="font-bold text-qing mb-2 flex items-center">
+                        <span class="mr-2">🎯</span> 為什麼去
+                    </h4>
+                    <p class="text-gray-700 leading-relaxed">
+                        <strong>普利茲克建築獎得主王澍</strong>的代表作，被譽為「中國最美校園」。
+                        整個校園本身就是一件巨大的藝術品——<strong>瓦爿牆、曲折的走廊、層疊的屋頂</strong>，
+                        與周圍的青山綠水融為一體。這裡不僅是學校，更是一個<strong>露天建築博物館</strong>，
+                        每一棟建築都值得細細品味。校內還有兩座專業博物館：國際設計博物館和民藝博物館。
+                    </p>
+                </div>
+
+                <div class="mb-6">
+                    <h4 class="font-bold text-qing mb-2 flex items-center">
+                        <span class="mr-2">✨</span> 必體驗
+                    </h4>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start"><span class="text-gold mr-2">▸</span>打卡<strong>「網紅紅牆」</strong>和孤獨的香樟樹（可能要排隊）</li>
+                        <li class="flex items-start"><span class="text-gold mr-2">▸</span>參觀<strong>中國國際設計博物館</strong>（包豪斯藏品）</li>
+                        <li class="flex items-start"><span class="text-gold mr-2">▸</span>在<strong>水岸山居</strong>感受建築與自然的對話</li>
+                        <li class="flex items-start"><span class="text-gold mr-2">▸</span>走進民藝博物館看傳統工藝</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <h4 class="font-bold text-qing mb-2 flex items-center">
+                        <span class="mr-2">🍜</span> 周邊美食
+                    </h4>
+                    <p class="text-gray-700">
+                        校內有食堂可刷支付寶。校外推薦：<br>
+                        <span class="text-qing font-medium">「象山藝術公社」</span>——步行可達，有更多餐飲選擇<br>
+                        <span class="text-qing font-medium">「轉塘老街」</span>——地道杭州小吃，物美價廉
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-4 mb-6 text-sm">
+                    <div class="bg-gray-50 p-3 rounded-lg">
+                        <span class="text-gray-500">📍 地址</span>
+                        <p class="font-medium">西湖區轉塘街道象山路352號</p>
+                    </div>
+                    <div class="bg-gray-50 p-3 rounded-lg">
+                        <span class="text-gray-500">🚇 交通</span>
+                        <p class="font-medium">地鐵6號線美院象山站，步行10分鐘</p>
+                    </div>
+                    <div class="bg-gray-50 p-3 rounded-lg">
+                        <span class="text-gray-500">⏰ 時間</span>
+                        <p class="font-medium">8:30-17:00（需帶身份證）</p>
+                    </div>
+                </div>
+
+                <div class="warning-box p-4 rounded-lg mb-4">
+                    <h5 class="font-bold text-red-700 mb-2">⚠️ 重要提醒</h5>
+                    <ul class="text-red-800 text-sm space-y-1">
+                        <li>• <strong>必須攜帶身份證</strong>，校門口需要登記</li>
+                        <li>• 重大活動期間（如畢業展、校慶）可能不對外開放，建議提前查詢</li>
+                        <li>• 校園很大，建議預留3-4小時，穿舒適的走路鞋</li>
+                    </ul>
                 </div>
             </div>
-        </div>
+        </article>
 
-        <!-- 4. 丝绸博物馆 -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition">
-            <div class="h-48 bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center text-white text-4xl">🏛️</div>
-            <div class="p-5">
-                <div class="flex justify-between items-start mb-2">
-                    <h2 class="text-xl font-bold">中国丝绸博物馆</h2>
-                    <span class="bg-qing/10 text-qing text-xs px-2 py-1 rounded">博物館</span>
+        <!-- 景點4: 絲綢博物館 -->
+        <article class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+            <div class="h-64 bg-gradient-to-br from-purple-600 to-pink-500 flex items-center justify-center text-white text-6xl">
+                🏛️
+            </div>
+            <div class="p-6 md:p-8">
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-qing text-white px-3 py-1 rounded-full text-sm">博物館</span>
+                    <span class="tag-pill text-qing px-3 py-1 rounded-full text-sm">網紅打卡</span>
+                    <span class="tag-pill text-qing px-3 py-1 rounded-full text-sm">免費</span>
                 </div>
-                <p class="text-gray-600 text-sm mb-3">世界最大丝绸博物馆，丝路馆为网红打卡点，时装馆、织造馆、锦绣廊。</p>
-                <div class="text-xs text-gray-500 space-y-1">
-                    <p>📍 上城区玉皇山路73-1号</p>
-                    <p>🕐 周二至日 9:00-17:00 · 免费</p>
-                    <p>⏱️ 建议游玩 2-3 小时</p>
+                
+                <h3 class="text-2xl font-serif font-bold text-ink mb-3">中國絲綢博物館 · 旋轉樓梯的時尚大片</h3>
+                
+                <div class="mb-6">
+                    <h4 class="font-bold text-qing mb-2 flex items-center">
+                        <span class="mr-2">🎯</span> 為什麼去
+                    </h4>
+                    <p class="text-gray-700 leading-relaxed">
+                        <strong>世界最大的絲綢專題博物館</strong>，国家一级博物馆。
+                        除了豐富的絲綢文物（從新石器時代到近代），這裡更是<strong>杭州最火的拍照聖地</strong>——
+                        館內的<strong>白色旋轉樓梯</strong>和<strong>鏡面穹頂</strong>是小紅書上的爆款打卡點。
+                        建築本身就是藝術品，由多個主題館組成：絲綢故事、服飾廳、染織廳、錦繡廊...
+                    </p>
+                </div>
+
+                <div class="mb-6">
+                    <h4 class="font-bold text-qing mb-2 flex items-center">
+                        <span class="mr-2">✨</span> 必體驗
+                    </h4>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start"><span class="text-gold mr-2">▸</span>在<strong>「絲路館」</strong>旋轉樓梯拍大片（白色純色系衣服最出片）</li>
+                        <li class="flex items-start"><span class="text-gold mr-2">▸</span>參觀<strong>時裝館</strong>看中西方服飾對比</li>
+                        <li class="flex items-start"><span class="text-gold mr-2">▸</span>在<strong>染織廳</strong>看古代織機運作</li>
+                        <li class="flex items-start"><span class="text-gold mr-2">▸</span>戶外區的園林景觀，人少安靜</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <h4 class="font-bold text-qing mb-2 flex items-center">
+                        <span class="mr-2">🍜</span> 周邊美食
+                    </h4>
+                    <p class="text-gray-700">
+                        位於玉皇山下，靠近南山路美食圈：<br>
+                        <span class="text-qing font-medium">「玉皇山莊」</span>——杭幫菜老字號<br>
+                        <span class="text-qing font-medium">「南山路咖啡館群」</span>——步行可達，文藝氛圍濃厚<br>
+                        <span class="text-qing font-medium">「西湖天地」</span>——更多連鎖餐飲選擇
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-4 mb-6 text-sm">
+                    <div class="bg-gray-50 p-3 rounded-lg">
+                        <span class="text-gray-500">📍 地址</span>
+                        <p class="font-medium">上城區玉皇山路73-1號</p>
+                    </div>
+                    <div class="bg-gray-50 p-3 rounded-lg">
+                        <span class="text-gray-500">🚇 交通</span>
+                        <p class="font-medium">地鐵7號線吳山廣場站C口，換乘公交或步行20分鐘</p>
+                    </div>
+                    <div class="bg-gray-50 p-3 rounded-lg">
+                        <span class="text-gray-500">⏰ 時間</span>
+                        <p class="font-medium">周二至日 9:00-17:00（周一閉館）</p>
+                    </div>
+                </div>
+
+                <div class="tip-box p-4 rounded-lg mb-4">
+                    <h5 class="font-bold text-amber-800 mb-2">📸 拍照攻略</h5>
+                    <p class="text-amber-900 text-sm">
+                        旋轉樓梯上午順光，建議早上去。穿<strong>純色衣服</strong>（白、黑、紅）最出片，
+                        避免花色。館內允許拍照，但請勿使用閃光燈。
+                    </p>
                 </div>
             </div>
-        </div>
+        </article>
 
-        <!-- 5. 白塔公园 -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition">
-            <div class="h-48 bg-gradient-to-br from-green-400 to-teal-600 flex items-center justify-center text-white text-4xl">🚂</div>
-            <div class="p-5">
-                <div class="flex justify-between items-start mb-2">
-                    <h2 class="text-xl font-bold">白塔公园</h2>
-                    <span class="bg-qing/10 text-qing text-xs px-2 py-1 rounded">工業遺產</span>
+        <!-- 景點5: 白塔公園 -->
+        <article class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+            <div class="h-64 bg-gradient-to-br from-green-600 to-teal-500 flex items-center justify-center text-white text-6xl">
+                🚂
+            </div>
+            <div class="p-6 md:p-8">
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-qing text-white px-3 py-1 rounded-full text-sm">工業遺產</span>
+                    <span class="tag-pill text-qing px-3 py-1 rounded-full text-sm">親子</span>
+                    <span class="tag-pill text-qing px-3 py-1 rounded-full text-sm">免費</span>
                 </div>
-                <p class="text-gray-600 text-sm mb-3">杭州最大的铁路遗存博物馆，复古火车、工业遗产，文艺拍照圣地。</p>
-                <div class="text-xs text-gray-500 space-y-1">
-                    <p>📍 西湖区老复兴街</p>
-                    <p>🕐 全天开放 · 免费</p>
-                    <p>⏱️ 建议游玩 1-2 小时</p>
+                
+                <h3 class="text-2xl font-serif font-bold text-ink mb-3">白塔公園 · 開往春天的列車</h3>
+                
+                <div class="mb-6">
+                    <h4 class="font-bold text-qing mb-2 flex items-center">
+                        <span class="mr-2">🎯</span> 為什麼去
+                    </h4>
+                    <p class="text-gray-700 leading-relaxed">
+                        這裡有<strong>浙江第一條鐵路</strong>——江墅鐵路的閘口站舊址（1907年通車）。
+                        公園內保留了完整的<strong>蒸汽機車、綠皮火車車廂和候車室</strong>，
+                        還有一座五代的<strong>白塔</strong>（與靈隱寺雙塔有「親緣」關係，梁思成曾考察）。
+                        春天櫻花盛開時，坐在<strong>觀光小火車</strong>上穿行花海，被譽為「開往春天的列車」。
+                    </p>
+                </div>
+
+                <div class="mb-6">
+                    <h4 class="font-bold text-qing mb-2 flex items-center">
+                        <span class="mr-2">✨</span> 必體驗
+                    </h4>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start"><span class="text-gold mr-2">▸</span>乘坐<strong>蒸汽觀光小火車</strong>（30元/人，約20分鐘往返）</li>
+                        <li class="flex items-start"><span class="text-gold mr-2">▸</span>在綠皮火車車廂內拍復古大片</li>
+                        <li class="flex items-start"><span class="text-gold mr-2">▸</span>參觀<strong>杭州鐵路博物館·知青紀念館</strong></li>
+                        <li class="flex items-start"><span class="text-gold mr-2">▸</span>春天賞櫻（3-4月最佳）</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <h4 class="font-bold text-qing mb-2 flex items-center">
+                        <span class="mr-2">🍜</span> 周邊美食
+                    </h4>
+                    <p class="text-gray-700">
+                        公園內有火車主題餐廳。周邊：<br>
+                        <span class="text-qing font-medium">「白塔公園火車餐廳」</span>——在真實火車車廂內用餐，體驗獨特<br>
+                        <span class="text-qing font-medium">「水澄橋商圈」</span>——地鐵站附近有商場和連鎖餐廳
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-4 mb-6 text-sm">
+                    <div class="bg-gray-50 p-3 rounded-lg">
+                        <span class="text-gray-500">📍 地址</span>
+                        <p class="font-medium">上城區老復興街4號（錢塘江邊）</p>
+                    </div>
+                    <div class="bg-gray-50 p-3 rounded-lg">
+                        <span class="text-gray-500">🚇 交通</span>
+                        <p class="font-medium">地鐵4號線水澄橋站B口，步行8分鐘</p>
+                    </div>
+                    <div class="bg-gray-50 p-3 rounded-lg">
+                        <span class="text-gray-500">⏰ 時間</span>
+                        <p class="font-medium">全天開放，小火車9:00-16:30</p>
+                    </div>
+                </div>
+
+                <div class="tip-box p-4 rounded-lg mb-4">
+                    <h5 class="font-bold text-amber-800 mb-2">🌸 季節建議</h5>
+                    <p class="text-amber-900 text-sm">
+                        <strong>3-4月櫻花季</strong>是最佳時節，公園內櫻花盛開，配合復古火車，
+                        拍照效果極佳。平日遊客較少，適合靜靜散步。
+                    </p>
                 </div>
             </div>
-        </div>
+        </article>
 
     </main>
 
+    <!-- 路線規劃 -->
+    <section class="bg-white py-12">
+        <div class="max-w-4xl mx-auto px-4">
+            <h3 class="text-2xl font-serif font-bold text-qing mb-8 text-center">推薦路線規劃</h3>
+            
+            <div class="space-y-6">
+                <!-- 一日遊 -->
+                <div class="border-2 border-qing/20 rounded-xl p-6">
+                    <h4 class="font-bold text-lg text-qing mb-4">🚶 精華一日遊（3個點）</h4>
+                    <div class="space-y-3 text-gray-700">
+                        <div class="flex items-start">
+                            <span class="bg-qing text-white w-6 h-6 rounded-full flex items-center justify-center text-sm mr-3 mt-0.5">1</span>
+                            <div>
+                                <strong class="text-ink">上午：饅頭山社區</strong>（2小時）
+                                <p class="text-sm text-gray-500">地鐵5號線候潮門站 → 感受市井煙火 → 中午在鳳凰山腳路用餐</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="bg-qing text-white w-6 h-6 rounded-full flex items-center justify-center text-sm mr-3 mt-0.5">2</span>
+                            <div>
+                                <strong class="text-ink">下午：絲綢博物館</strong>（2-3小時）
+                                <p class="text-sm text-gray-500">打車或公交前往 → 拍照打卡 → 逛南山路</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="bg-qing text-white w-6 h-6 rounded-full flex items-center justify-center text-sm mr-3 mt-0.5">3</span>
+                            <div>
+                                <strong class="text-ink">傍晚：小河直街</strong>（2小時）
+                                <p class="text-sm text-gray-500">地鐵5號線大運河站 → 看運河夕陽 → 晚餐後賞夜景</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 兩日遊 -->
+                <div class="border-2 border-qing/20 rounded-xl p-6">
+                    <h4 class="font-bold text-lg text-qing mb-4">🗓️ 深度兩日遊（5個點）</h4>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h5 class="font-bold text-ink mb-3">第一天：歷史人文線</h5>
+                            <ul class="space-y-2 text-gray-700 text-sm">
+                                <li>• 上午：饅頭山社區（市井生活）</li>
+                                <li>• 中午：鳳凰山腳路午餐</li>
+                                <li>• 下午：絲綢博物館（文化藝術）</li>
+                                <li>• 晚上：南山路或西湖邊散步</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-ink mb-3">第二天：文藝建築線</h5>
+                            <ul class="space-y-2 text-gray-700 text-sm">
+                                <li>• 上午：象山美皖（建築藝術）</li>
+                                <li>• 中午：轉塘午餐</li>
+                                <li>• 下午：白塔公園（工業遺產）</li>
+                                <li>• 傍晚：小河直街夜景</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 通用避坑 -->
+    <section class="max-w-4xl mx-auto px-4 py-12">
+        <h3 class="text-2xl font-serif font-bold text-qing mb-6">⚠️ 通用避坑指南</h3>
+        <div class="grid md:grid-cols-2 gap-4">
+            <div class="warning-box p-4 rounded-lg">
+                <h4 class="font-bold text-red-700 mb-2">交通篇</h4>
+                <ul class="text-red-800 text-sm space-y-1">
+                    <li>• 杭州地鐵覆蓋主要景點，建議辦理乘車碼</li>
+                    <li>• 週末景區附近很堵，停車位難找，優先選地鐵</li>
+                    <li>• 打車避開早晚高峰（8-9點，17-19點）</li>
+                </ul>
+            </div>
+            <div class="warning-box p-4 rounded-lg">
+                <h4 class="font-bold text-red-700 mb-2">遊覽篇</h4>
+                <ul class="text-red-800 text-sm space-y-1">
+                    <li>• 博物館週一普遍閉館，提前查好時間</li>
+                    <li>• 熱門打卡點上午人少，下午排隊嚴重</li>
+                    <li>• 杭州春秋最美，夏天炎熱冬天濕冷</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
     <!-- 頁腳 -->
-    <footer class="bg-gray-800 text-white py-6 mt-8">
-        <div class="max-w-6xl mx-auto px-4 text-center text-sm">
-            <p>探索杭州的靜謐角落 · 避開人潮享清幽</p>
+    <footer class="bg-ink text-white py-8">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <p class="font-serif text-lg mb-2">杭州秘境指南</p>
+            <p class="text-gray-400 text-sm">
+                數據來源：攜程、小紅書、大眾點評、孤獨星球<br>
+                製作時間：2025年3月
+            </p>
         </div>
     </footer>
 
